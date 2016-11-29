@@ -38,10 +38,6 @@
       <HintPath>..\packages\CsvHelper.3.0.0-beta7\lib\net451\CsvHelper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CsvReader, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CsvTools.1.0.12\lib\CsvReader.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Geocoding, Version=3.6.0.0, Culture=neutral, PublicKeyToken=7c714700b88674c7, processorArchitecture=MSIL">
       <HintPath>..\packages\Geocoding.net.3.6.0\lib\net40\Geocoding.dll</HintPath>
       <Private>True</Private>
@@ -122,7 +118,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="GeoCodeActivity.cs" />
+    <Compile Include="GeoCodeContext.cs" />
+    <Compile Include="IGeoCodeActivity.cs" />
+    <Compile Include="MyGeoCodeActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
