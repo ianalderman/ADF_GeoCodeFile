@@ -1,0 +1,47 @@
+{
+    "name": "plGeocodeActivity",
+    "properties": {
+        "description": "Use custom activity",
+        "activities": [
+            {
+                "type": "DotNetActivity",
+                "typeProperties": {
+                    "assemblyName": "GetCodeCustomActivity.dll",
+                    "entryPoint": "GeoCodeCustomActivityNS.MyGeoCodeActivity",
+                    "packageLinkedService": "AzureStorageLinkedService",
+                    "packageFile": "customactivity/GetCodeCustomActivity.zip",
+                    "extendedProperties": {
+                        "OutputFolder": "processed",
+                        "MapsAPIKey": "<YOUR KEY HERE>"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputDataset"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputDataset"
+                    }
+                ],
+                "policy": {
+                    "timeout": "00:30:00",
+                    "concurrency": 2,
+                    "retry": 3
+                },
+                "scheduler": {
+                    "frequency": "Minute",
+                    "interval": 15
+                },
+                "name": "DotNetGeoCodeActivity",
+                "linkedServiceName": "AzureBatchLinkedService"
+            }
+        ],
+        "start": "2016-11-13T18:24:00Z",
+        "end": "2017-11-16T05:00:00Z",
+        "isPaused": true,
+        "hubName": "egcompcoukadf_hub",
+        "pipelineMode": "Scheduled"
+    }
+}
